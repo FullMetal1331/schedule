@@ -1,0 +1,45 @@
+/*nav {
+	display: grid;
+	grid-template-columns: 80% 10% 10%;
+	align-items: start;
+	align-content: start;
+}
+
+.logo {
+	grid-column-start: 1;
+	justify-self: start;
+}
+
+.l1 {
+	grid-column-start: 2;
+	justify-self: end;
+}
+
+.l2 {
+	grid-column-start: 3;
+	justify-self: center;
+}*/
+
+nav {
+	display: flex;
+	justify-content: space-between;
+}
+
+.options {
+	display: flex;
+	padding-right: 2%;
+}
+
+.logo {
+	display: flex;
+	font-weight: bold;
+	padding-left: 3%;
+}
+
+ .logo-image{
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin-top: 17%;
+}

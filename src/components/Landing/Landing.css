@@ -1,0 +1,14 @@
+.cards{
+  padding-top: 3%;
+  display: flex;
+  align-items: flex-start;
+  align-content: center;
+  justify-content: space-around; /*Now spreads them out because there is space. If you remove this you will see them all go back to the left*/
+  width: 100%;
+}
+.cards > div {
+  height: 40rem;
+}
+.card{
+  background-color: red;
+  width: 30%;}

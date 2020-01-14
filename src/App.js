@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
+import Register from './components/Register/Register';
+import Landing from './components/Landing/Landing';
 import './App.css';
 
 class App extends Component {
@@ -27,21 +29,21 @@ class App extends Component {
     
     return (
       <div className="App">
-        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange}></Navigation>
+        <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         {
           (route==='signin')?
-            <Signin></Signin>
+            <Signin onRouteChange={this.onRouteChange} />
             :
             (route==='register')?
-              <register></register>
+              <Register onRouteChange={this.onRouteChange} />
               :
               (route==='landing')?
-                <landing></landing>
+                <Landing />
                 :
                 (route==='timeTable')?
-                  <timeTable></timeTable>
+                  <timeTable />
                   :
-                  <todo></todo>
+                  <todo />
         }
       </div>
     );
