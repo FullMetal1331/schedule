@@ -3,6 +3,8 @@ import Navigation from './components/Navigation/Navigation';
 import Signin from './components/Signin/Signin';
 import Register from './components/Register/Register';
 import Landing from './components/Landing/Landing';
+import Timetable from './components/Timetable/Timetable';
+import Todo from './components/Todo/Todo';
 import './App.css';
 
 class App extends Component {
@@ -41,9 +43,9 @@ class App extends Component {
                 <Landing />
                 :
                 (route==='timeTable')?
-                  <timeTable />
+                  <Timetable onRouteChange={this.onRouteChange} />
                   :
-                  <todo />
+                  <Todo onRouteChange={this.onRouteChange} />
         }
       </div>
     );
