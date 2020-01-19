@@ -9,6 +9,7 @@ class Todo extends Component {
 			len: 0,
 			job: '',
 			jobs: []
+			//card: []
 		}
 	}
 	
@@ -28,19 +29,33 @@ class Todo extends Component {
 		this.setState({len: newLen});
 	}
 	
+	// showCard = (event) => {
+	// 	let card1 = this.state.card;
+	// 	const ind = event.target.name;
+	// 	console.log(ind);
+	// 	card1.push(
+	// 		<div className='fullBack'>
+	// 			<div className='card'>
+	// 				<p>{this.state.jobs[ind]}</p>
+	// 			</div>
+	// 		</div>
+	// 	);
+	// }
+	
 	addElement = (event) => {
 		let jobs1 = this.state.jobs;
 		let newLen = this.state.len;
-		let str = `add grow ${this.state.len}`;
+		let str = `del dim ${this.state.len}`;
+		let str2 = `${this.state.len}`;
 		newLen+=1;
 		
 		jobs1.push(
-			<div>
-				<p>
+			<div className='newjob'>
+				<p /*onClick={this.showCard}*/ name={str2} className='newjobp ma3'>
 					{this.state.job}
 				</p>
 				<div onClick={this.delElement} className={str}>
-					<p>X</p>
+					<p className='delbut'>X</p>
 				</div>
 			</div>
 			);
@@ -58,7 +73,7 @@ class Todo extends Component {
 			<div className='todo1'>
 				<div className='jobAdd'>
 					<input type="text" placeholder="" className="inp mt2" onChange={this.newJob}/>
-					<div className='add mt3 dib bw2 grow shadow-5' onClick={this.addElement}>
+					<div className='add dib bw2 grow shadow-5' onClick={this.addElement}>
 						<p className='f2 mt0'>+</p>
 					</div>
 				</div>

@@ -1,26 +1,93 @@
 .todo1 {
 	display: grid;
-	grid-template-columns: 5vw 35vw 55vw 5vw;
+	grid-template-columns: 40vw 60vw;
+	align-items: start;
+	justify-content: space-around;
 }
 
 .jobAdd {
-	grid-column-start: 2;
-	grid-column-end: 3;
+	grid-column-start: 1;
+	grid-column-end: 2;
 	
-	display: flex;
+	/*display: flex;
 	flex-direction: row;
 	justify-content: start;
+	align-items: center;*/
+	
+	display: grid;
+	grid-template-rows: 70px auto;
+	grid-template-columns: 75% 25%;
+	
 	align-items: center;
+	grid-column-gap: 20px;
+}
+
+.add {
+	width: 50px;
+	height: 50px;
+	min-width: 50px;
+	min-height: 50px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	cursor: pointer;
+	/*margin-left: 1vw;
+	margin-top: 1vh;*/
+	
+	grid-column-start: 2;
+}
+
+.inp {
+	grid-column-start: 1;
+	margin-left: 20px;
 }
 
 .jobList {
-	grid-column-start: 3;
-	grid-column-end: 4;
+	grid-column-start: 2;	
+	overflow: auto;
+	margin-right: 20px;
+	
+	max-height: 80vh;
 	
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	margin-left: 15%;
+}
+
+.newjob {
+	
+	display: grid;
+	grid-template-columns: 75% 25%;
+	
+	border-radius: 50px;
+	background-color: rgba(156, 156, 156, 0.1);
+	
+	margin-left: 5%;
+	margin-bottom: 1%;
+}
+
+.newjob:hover {
+	transform: scale(1.1);
+	transition: .6s ease-out;
+}
+
+.newjob {
+	transform: scale(1.0);
+	transition: .6s ease-in;
+	
+	max-width: 80%;
+}
+
+.newjobp {
+	grid-column-start: 1;
+	grid-column-end: 2;
+	
+	cursor: pointer;
+	/*display: flex;
+	justify-content: center;
 	align-items: center;
+	flex-wrap: nowrap;*/
 }
 
 .float{
@@ -38,25 +105,49 @@
 	cursor: pointer;
 }
 
-.add {
-	width: 50px;
-	height: 50px;
-	min-width: 50px;
-	min-height: 50px;
-	background-color:#0C9;
-	color:#FFF;
-	border-radius:50px;
-	text-align: center;
+.del {
+	grid-column-start: 2;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
 	cursor: pointer;
 	
+	background-color: rgba(140, 140, 140, 0.1);
+	
+	border-radius: 0px 50px 50px 0px;
 }
 
-.newJob {
+.delbut {
+	font-weight: 600;
+	font-size: 3vw;
+	font-color: white;
+	margin: 0;
+}
+
+.del:hover > p {
+	transform: scale(1.1);
+	transition: .6s;
+}
+
+.del > p {
+	transform: scale(1.0);
+	transition: .6s;
+}
+
+.fullBack {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(150, 150, 150, 0.1);
+}
+
+/*.newJob {
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
 	flex-wrap: nowrap;
-}
+}*/
 /*.my-float{
 	margin-top:19px;
 }*/
