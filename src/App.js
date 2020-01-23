@@ -12,17 +12,53 @@ class App extends Component {
     super(props);
     this.state= {
       isSignedIn: false,
-      route: 'landing'
+      route: 'landing',
+      user: {
+        name:'',
+        email:'',
+        timeTable: [
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','',''],
+          ['','','','','','','','','']
+        ],
+        todo: []
+      }
     }
   }
   
+  loadUsertt = (allDays) => {
+    let userTemp = this.state.user;
+    userTemp.timeTable = allDays;
+    this.setState({user: userTemp});
+    //console.log(this.state.user.timeTable);
+  }
+  
+  loadUsertodo = (allJobs) => {
+    let userTemp = this.state.user;
+    userTemp.todo = allJobs;
+    this.setState({user: userTemp});
+    //console.log('inside loadUsertodo', this.state.user.todo);
+    //console.log('inside loadUsertodo', allJobs);
+  }
+  
   onRouteChange = (route) => {
+    
+    //console.log('route', route);
+    
     if(route==='landing')
       this.setState({isSignedIn: false});
     else if(route==='timeTable' || route==='todo')
       this.setState({isSignedIn: true});
     
     this.setState({route: route});
+    
+    // console.log(this.state.user.todo);
   }
   
   render() {
@@ -43,9 +79,9 @@ class App extends Component {
                 <Landing />
                 :
                 (route==='timeTable')?
-                  <Timetable onRouteChange={this.onRouteChange} />
+                  <Timetable loadUsertt={this.loadUsertt} ttvals={this.state.user.timeTable} onRouteChange={this.onRouteChange} />
                   :
-                  <Todo onRouteChange={this.onRouteChange} />
+                  <Todo loadUsertodo={this.loadUsertodo} todovals={this.state.user.todo} onRouteChange={this.onRouteChange} />
         }
       </div>
     );

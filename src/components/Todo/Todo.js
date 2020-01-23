@@ -1,84 +1,81 @@
 import React, { Component } from 'react';
+import ListOfJobs from './ListOfJobs';
 import './Todo.css';
 
 class Todo extends Component {
 	
 	constructor(props){
-		super(props)
+		super(props);
 		this.state = {
-			len: 0,
-			job: '',
 			jobs: []
-			//card: []
 		}
+		
+		this.addElement = this.addElement.bind(this);
+		this.delElement = this.delElement.bind(this);
 	}
 	
-	newJob = (event) => {
-		this.setState({job: event.target.value});
+	delElement = (key) => {
+		//console.log(key);
+		let leftJobs = this.state.jobs.filter((ele) => {
+			return(ele.key !== key)});
+		
+		//console.log(leftJobs);
+		
+		this.setState({jobs: leftJobs});
+		this.props.loadUsertodo(leftJobs);
 	}
 	
-	delElement = (event) => {
-		const ind = event.target.className;
-		let jobs1 = this.state.jobs;
-		let newLen = this.state.len;
+	addElement = (eve) => {
 		
-		newLen -= 1;
-		jobs1.splice(ind, 1);
+		// console.log('inp val', this._inputElement.value);
+		// console.log('jobs state prev', this.state.jobs);
 		
-		this.setState({jobs: jobs1});
-		this.setState({len: newLen});
+		if(this._inputElement.value !== "") {
+			let newItem = {
+				text: this._inputElement.value,
+				key: Date.now()
+			};
+			
+			// this.setState((prevState) => {
+				
+			// 	console.log(prevState.jobs);
+				
+			// 	return {
+			// 		jobs: prevState.jobs.push(newItem)
+			// 	};
+			// });
+			
+			let jobsTemp = this.state.jobs;
+			jobsTemp.push(newItem);
+			this.setState({jobs: jobsTemp});
+			this.props.loadUsertodo(jobsTemp);
+			
+			this._inputElement.value = "";
+		}
+		
+		// console.log('jobs state new', this.state.jobs);
+		
+		eve.preventDefault();
 	}
 	
-	// showCard = (event) => {
-	// 	let card1 = this.state.card;
-	// 	const ind = event.target.name;
-	// 	console.log(ind);
-	// 	card1.push(
-	// 		<div className='fullBack'>
-	// 			<div className='card'>
-	// 				<p>{this.state.jobs[ind]}</p>
-	// 			</div>
-	// 		</div>
-	// 	);
-	// }
-	
-	addElement = (event) => {
-		let jobs1 = this.state.jobs;
-		let newLen = this.state.len;
-		let str = `del dim ${this.state.len}`;
-		let str2 = `${this.state.len}`;
-		newLen+=1;
+	componentDidMount() {
+		//console.log(this.props.todovals)
+		this.setState({jobs: this.props.todovals});
 		
-		jobs1.push(
-			<div className='newjob'>
-				<p /*onClick={this.showCard}*/ name={str2} className='newjobp ma3'>
-					{this.state.job}
-				</p>
-				<div onClick={this.delElement} className={str}>
-					<p className='delbut'>X</p>
-				</div>
-			</div>
-			);
-		this.setState({jobs: jobs1});
-		this.setState({len: newLen});
+		// axios.get(req,res=>
+		// 	{this.set})
 	}
 	
 	render() {
-		
-		let jobs = this.state.jobs.map((ele, ind) => {
-				return (ele);
-			});
-		
+		// console.log('inside render', this.state.jobs)
 		return(
 			<div className='todo1'>
-				<div className='jobAdd'>
-					<input type="text" placeholder="" className="inp mt2" onChange={this.newJob}/>
-					<div className='add dib bw2 grow shadow-5' onClick={this.addElement}>
-						<p className='f2 mt0'>+</p>
-					</div>
-				</div>
-				<div className='jobList'>
-					{jobs}
+				<form className='jobAdd' onSubmit={this.addElement}>
+					<input type="text" placeholder="" className="inp mt2" ref={(a) => {this._inputElement = a}}/>
+					<button className='add dib bw0 grow shadow-5' type='submit'>+</button>
+				</form>
+				<div>
+					<ListOfJobs className='jobsList' jobs={this.state.jobs} delElement={this.delElement}/>
 				</div>
 				<div className='float dib bw2 grow shadow-5' onClick={() => {this.props.onRouteChange('timeTable')}}>
 					<p className='my-float'>Time-Table</p>
