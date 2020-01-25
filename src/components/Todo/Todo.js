@@ -72,7 +72,7 @@ class Todo extends Component {
 			<div className='todo1'>
 				<form className='jobAdd' onSubmit={this.addElement}>
 					<input type="text" placeholder="" className="inp mt2" ref={(a) => {this._inputElement = a}}/>
-					<button className='add dib bw0 grow shadow-5' type='submit'>+</button>
+					<button className='add dib bw0 grow shadow-5' type='submit'>add</button>
 				</form>
 				<div>
 					<ListOfJobs className='jobsList' jobs={this.state.jobs} delElement={this.delElement}/>

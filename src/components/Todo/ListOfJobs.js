@@ -16,7 +16,7 @@ class ListOfJobs extends Component {
 	
 	createJobs(job) {
 		//console.log(job);
-		return <li onClick={() => {this.delJob(job.key)}} key={job.key}>{job.text}</li>
+		return <li className='indJob' onClick={() => {this.delJob(job.key)}} key={job.key}>{job.text}</li>
 	}
 	
 	render() {

@@ -47,6 +47,11 @@ class App extends Component {
     //console.log('inside loadUsertodo', allJobs);
   }
   
+  loadUser = (user) => {
+    console.log(user);
+    //this.setState({user: user});
+  }
+  
   onRouteChange = (route) => {
     
     //console.log('route', route);
@@ -70,10 +75,10 @@ class App extends Component {
         <Navigation isSignedIn={isSignedIn} onRouteChange={this.onRouteChange} />
         {
           (route==='signin')?
-            <Signin onRouteChange={this.onRouteChange} />
+            <Signin onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
             :
             (route==='register')?
-              <Register onRouteChange={this.onRouteChange} />
+              <Register onRouteChange={this.onRouteChange} loadUser={this.loadUser} />
               :
               (route==='landing')?
                 <Landing />

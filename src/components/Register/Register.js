@@ -35,6 +35,10 @@ class Register extends React.Component {
 				password: this.state.newPassword
 			})
 		})
+		.then(res => res.json())
+		.then(user => {
+			this.props.loadUser(user);
+		})
 		.catch((err) => {console.log(err)})
 		
 		this.props.onRouteChange('timeTable');

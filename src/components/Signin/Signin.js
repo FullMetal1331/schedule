@@ -9,6 +9,10 @@ class Signin extends React.Component {
 			signInEmail: '',
 			signInPassword: ''
 		}
+		
+		this.onEmailChange = this.onEmailChange.bind(this);
+		this.onPasswordChange = this.onPasswordChange.bind(this);
+		this.routeChange = this.routeChange.bind(this);
 	}
 	
 	onEmailChange = (event) => {
@@ -27,6 +31,10 @@ class Signin extends React.Component {
 				email: this.state.signInEmail,
 				password: this.state.signInPassword
 			})
+		})
+		.then(response => response.json())
+		.then((user) => {
+				this.props.loadUser(user);
 		})
 		.catch((err) => {console.log(err)})
 		

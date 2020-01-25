@@ -1,0 +1,22 @@
+.indJob {
+	list-style: none;
+	background-color: rgba(156, 156, 156, 0.5);
+	text-align: center;
+	height: 5vh;
+	width: 30vw;
+	min-height: 30px;
+	min-width: 150px;
+	padding-top: 0.5vh;
+	margin-bottom: 0.8vh;
+	border-radius: 15px;
+	
+	transform: scale(1.0);
+	transition: 0.6s ease-out;
+}
+
+.indJob:hover {
+	transform: scale(1.1);
+	transition: 0.6s ease-out;
+	background-color: rgba(156, 156, 156, 0.2);
+	cursor: pointer;
+}
