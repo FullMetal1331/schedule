@@ -5,12 +5,13 @@
 	align-content: start;*/
 	display: grid;
 	grid-template-rows: 10% 10% 10% 10% 10% 10% 10% 10% 20% ;
-	grid-row-gap: 5vh;
+	grid-row-gap: 15px;
 }
 
 .tt > div {
 	display: grid;
 	grid-template-columns: 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw 9vw;
+	grid-column-gap: 1px;
 	justify-content: center;
 	/*background-color: rgba(125, 255, 238, 0.4);*/
 	border-radius: 50px;
@@ -21,7 +22,7 @@
 }
 
 .tt > div > input:hover {
-	transform: scale(1.1);
+	transform: scale(1.05);
 	transition: 0.6s;
 }
 
@@ -39,11 +40,28 @@
 	margin: ;
 } changes propogate to sigin and register input fields*/
 
-.float{
+.float1{
 	position: fixed;
 	width: 10vw;
 	height: 5vh;
-	min-width: 100px;
+	min-width: 70px;
+	max-width: 100px;
+	min-height: 50px;
+	bottom: 3%;
+	right: 15%;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.float2{
+	position: fixed;
+	width: 10vw;
+	height: 5vh;
+	min-width: 70px;
+	max-width: 100px;
 	min-height: 50px;
 	bottom: 3%;
 	right: 5%;
@@ -73,7 +91,3 @@ input {
 	border-radius: 15px;
 	background-color: transparent;
 }
-
-/*.my-float{
-	margin-top:19px;
-}*/

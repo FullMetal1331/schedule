@@ -24,6 +24,9 @@ class Signin extends React.Component {
 	}
 	
 	routeChange = (event) => {
+		
+		event.preventDefault();
+		
 		fetch('http://localhost:3000/signin', {
 			method: 'post',
 			headers: {'Content-Type': 'application/json'},
@@ -34,23 +37,26 @@ class Signin extends React.Component {
 		})
 		.then(response => response.json())
 		.then((user) => {
-				this.props.loadUser(user);
+				if(user!="invalid credentials")
+				{
+					this.props.loadUser(user);
+					this.props.onRouteChange('timeTable');
+				}
 		})
 		.catch((err) => {console.log(err)})
 		
-		this.props.onRouteChange('timeTable');
-	}
+			}
 	
 	render() {
 		return (
 			<div>
 				<div className="login-page">
 				  <div className="form">
-				  	<p className='tc f2'>^_^</p>
-				    <form className="login-form">
+				  	<p className='tc f2'>Sign In</p>
+				    <form className="login-form" onSubmit={this.routeChange}>
 				      <input onChange={this.onEmailChange} type="email" placeholder="email"/>
 				      <input onChange={this.onPasswordChange} type="password" placeholder="password"/>
-				      <button onClick={this.routeChange}>Sign In</button>
+				      <button type='submit'>Sign In</button>
 				    </form>
 				  </div>
 				</div>

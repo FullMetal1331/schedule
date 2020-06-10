@@ -32,9 +32,11 @@ class Todo extends Component {
 		
 		if(this._inputElement.value !== "") {
 			let newItem = {
-				text: this._inputElement.value,
+				email: this.props.email,
+				job: this._inputElement.value,
 				key: Date.now()
 			};
+			console.log(newItem);
 			
 			// this.setState((prevState) => {
 				
@@ -67,7 +69,7 @@ class Todo extends Component {
 	}
 	
 	render() {
-		// console.log('inside render', this.state.jobs)
+		 console.log('inside render', this.state.jobs)
 		return(
 			<div className='todo1'>
 				<form className='jobAdd' onSubmit={this.addElement}>
@@ -75,9 +77,13 @@ class Todo extends Component {
 					<button className='add dib bw0 grow shadow-5' type='submit'>add</button>
 				</form>
 				<div>
+					<h1 className='todo1_header mr5'>Todo List</h1>
 					<ListOfJobs className='jobsList' jobs={this.state.jobs} delElement={this.delElement}/>
 				</div>
-				<div className='float dib bw2 grow shadow-5' onClick={() => {this.props.onRouteChange('timeTable')}}>
+				<div className='float1 dib bw2 grow shadow-5' onClick={() => {this.props.onRouteChange('project')}}>
+					<p className='my-float'>Project</p>
+				</div>
+				<div className='float2 dib bw2 grow shadow-5' onClick={() => {this.props.onRouteChange('timeTable')}}>
 					<p className='my-float'>Time-Table</p>
 				</div>
 			</div>

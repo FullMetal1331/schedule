@@ -16,11 +16,11 @@ class ListOfJobs extends Component {
 	
 	createJobs(job) {
 		//console.log(job);
-		return <li className='indJob' onClick={() => {this.delJob(job.key)}} key={job.key}>{job.text}</li>
+		return <li className='indJob' onClick={() => {this.delJob(job.key)}} key={job.key}>{job.job}</li>
 	}
 	
 	render() {
-		// console.log(this.props)
+		 console.log(this.props.jobs);
 		let list = this.props.jobs.map(this.createJobs);
 		
 		return(

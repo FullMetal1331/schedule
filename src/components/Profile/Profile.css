@@ -1,0 +1,151 @@
+.profile{
+	display:grid;
+	grid-template-rows:70%|30%|
+}
+
+.profile_upper_half{
+	grid-row-start: 1;
+	grid-row-end: 2;
+	
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.profile_pic{
+	margin-left:10%;
+}
+
+.profile_name_change{
+	margin-top: 2%;
+}
+
+.profile_name_change_ele1{
+	min-height: 30px;
+	max-height: 30px;
+	border-radius: 15px 0px 0px 15px;
+	min-width: 300px;
+}
+
+.profile_name_change_ele2{
+	width: 50px;
+	height: 35px;
+	min-width: 50px;
+	min-height: 30px;
+	max-height: 30px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:0px 15px 15px 0px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.profile_phone_change{
+	margin-top: 2%;
+}
+
+.profile_phone_change_ele1{
+	min-height: 30px;
+	max-height: 30px;
+	border-radius: 15px 0px 0px 15px;
+	min-width: 300px;
+}
+
+.profile_phone_change_ele2{
+	width: 50px;
+	height: 35px;
+	min-width: 50px;
+	min-height: 30px;
+	max-height: 30px;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:0px 15px 15px 0px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.profile_alert_check{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+.profile_alert_check_email_label{
+	margin-left: 15%;
+	margin-top: 5%;
+}
+
+.profile_alert_check_phone_label{
+	margin-right: 30%;
+	margin-top: 5%;
+}
+
+.profile_attendance{
+	margin-right: 10%;
+}
+
+.profile_attendance_list{
+	margin-right: 10%;
+	
+	min-height:350px;
+	max-height:350px;
+	min-width:450px;
+	max-width:450px;
+	
+		
+	overflow-y: auto;
+}
+
+.profile_goto_tt{
+	position: fixed;
+	width: 10vw;
+	height: 5vh;
+	min-width: 70px;
+	max-width: 100px;
+	min-height: 50px;
+	bottom: 10%;
+	right: 25%;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	cursor: pointer;
+	
+	padding-top: 1%;
+}
+
+.profile_goto_todo{
+	position: fixed;
+	width: 10vw;
+	height: 5vh;
+	min-width: 70px;
+	max-width: 100px;
+	min-height: 50px;
+	bottom: 10%;
+	right: 45%;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	cursor: pointer;
+	
+	padding-top: 1%;
+}
+
+.profile_goto_proj{
+	position: fixed;
+	width: 10vw;
+	height: 5vh;
+	min-width: 70px;
+	max-width: 100px;
+	min-height: 50px;
+	bottom: 10%;
+	right: 65%;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	cursor: pointer;
+	
+	padding-top: 1%;
+}

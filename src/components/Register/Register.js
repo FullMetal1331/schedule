@@ -49,7 +49,7 @@ class Register extends React.Component {
 			<div>
 				<div className="login-page">
 					<div className="form">
-					  	<p className='tc f2'>^_^</p>
+					  	<p className='tc f2'>Register</p>
 					    <form className="login-form">
 						    <input onChange={this.onNameChange} type="text" placeholder="name"/>
 						    <input onChange={this.onEmailChange} type="email" placeholder="email"/>

@@ -17,12 +17,13 @@ class Timetable extends React.Component {
 		let allDaysTemp = this.state.allDays;
 		allDaysTemp[ind1][ind2] = event.target.value;
 		this.setState({allDays: allDaysTemp});
-		// console.log(this.props.ttvals);
-		// console.log(this.state.allDays);
+		this.props.loadUsertt(this.state.allDays);
+		 // console.log(this.props.ttvals);
+		 // console.log(this.state.allDays);
 	}
 	
-	routeChange = () => {
-		this.props.onRouteChange('todo');
+	routeChange = (route) => {
+		this.props.onRouteChange(route);
 	}
 	
 	/*onSave = (event) => {
@@ -36,7 +37,7 @@ class Timetable extends React.Component {
 		return(
 			<div className='tt'>
 				<div className='time'>
-					<p className='f5 mt2 mb2 pa1 tc p1'>Days</p>
+					<p className='f5 mt2 mb2 pa1 tc p1'>Days\Time</p>
 					<p className='f5 mt2 mb2 pa1 tc p2'>9-10am</p>
 					<p className='f5 mt2 mb2 pa1 tc p3'>10-11am</p>
 					<p className='f5 mt2 mb2 pa1 tc p4'>11-12am</p>
@@ -139,7 +140,10 @@ class Timetable extends React.Component {
 				</span>*/}
 				
 				<span>
-					<div className='float dib bw2 grow shadow-5'onClick={this.routeChange}>
+					<div className='float1 dib bw2 grow shadow-5' onClick={() => {this.props.onRouteChange('project')}}>
+						<p className='my-float'>Project</p>
+					</div>
+					<div className='float2 dib bw2 grow shadow-5'onClick={() => {this.routeChange('todo')}}>
 						<p className='my-float'>To-Do</p>
 					</div>
 				</span>

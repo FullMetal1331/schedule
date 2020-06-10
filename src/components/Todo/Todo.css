@@ -66,18 +66,16 @@
 	
 	margin-left: 5%;
 	margin-bottom: 1%;
-}
-
-.newjob:hover {
-	transform: scale(1.1);
-	transition: .6s ease-out;
-}
-
-.newjob {
+	
 	transform: scale(1.0);
 	transition: .6s ease-in;
 	
 	max-width: 80%;
+}
+
+.newjob:hover {
+	transform: scale(1.05);
+	transition: .6s ease-out;
 }
 
 .newjobp {
@@ -91,11 +89,28 @@
 	flex-wrap: nowrap;*/
 }
 
-.float{
+.float1{
 	position: fixed;
 	width: 10vw;
 	height: 5vh;
-	min-width: 100px;
+	min-width: 70px;
+	max-width: 100px;
+	min-height: 50px;
+	bottom: 3%;
+	right: 15%;
+	background-color:#0C9;
+	color:#FFF;
+	border-radius:50px;
+	text-align: center;
+	cursor: pointer;
+}
+
+.float2{
+	position: fixed;
+	width: 10vw;
+	height: 5vh;
+	min-width: 70px;
+	max-width: 100px;
 	min-height: 50px;
 	bottom: 3%;
 	right: 5%;
@@ -143,12 +158,13 @@
 	background-color: rgba(150, 150, 150, 0.1);
 }
 
+.todo_header{
+	margin-right: 100%;
+}
+
 /*.newJob {
 	display: flex;
 	flex-direction: row;
 	justify-content: start;
 	flex-wrap: nowrap;
-}*/
-/*.my-float{
-	margin-top:19px;
 }*/

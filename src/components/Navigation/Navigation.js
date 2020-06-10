@@ -1,7 +1,7 @@
 import React from 'react';
 import './Navigation.css';
 
-const Navigation = ({ isSignedIn, onRouteChange }) => {
+const Navigation = ({ isSignedIn, onRouteChange, name }) => {
 	if(isSignedIn)
 	{
 		return (
@@ -9,6 +9,9 @@ const Navigation = ({ isSignedIn, onRouteChange }) => {
 				<div className='logo'>
 					<img src={ require('./clock-icon.ico') } className='logo-image' />
 					<p onClick={ () => {onRouteChange('landing')} } className='f2 grow black pointer logo'>Schedule</p>
+				</div>
+				<div className='profile_button' onClick={ () => {onRouteChange('profile')}}>
+					<img className='profile_button_img' src={`https://robohash.org/${name}?20x20`} alt="Profile"/>
 				</div>
 				<div className='options'>
 					<p onClick={ () => {onRouteChange('landing')} } className='f3 link dim black underline pa3 pointer'>Sign Out</p>
