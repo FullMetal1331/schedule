@@ -238,7 +238,7 @@ db
 })
 
 // for emailing time table
-cron.schedule('30 * * * * *' ,() =>{
+cron.schedule('50 8-16 * * *' ,() =>{
 	let date = new Date();
 	let dayOfWeek = date.getDay();
 	let hourOfDay = date.getHours();
@@ -348,7 +348,7 @@ cron.schedule('30 * * * * *' ,() =>{
 });
 
 // for emailing todo list
-cron.schedule('10 * * * * *' ,() =>{
+cron.schedule('* 8 * * *' ,() =>{
 	
 	console.log(update_from_replies());
 	
@@ -431,7 +431,7 @@ cron.schedule('10 * * * * *' ,() =>{
 });
 
 //for attendance updation
-cron.schedule('10 * * * * *', () => {
+cron.schedule('* 19 * * *', () => {
 	let date = new Date();
 	let dayOfWeek = date.getDay();
 	var day = ['sunday','monday','tuesday','wednesday','thursday','friday','saturday']
@@ -521,6 +521,11 @@ app.post('/signin', (req, res) =>{
 	//console.log('server-side', req.body);
 	
 	const {email, password} = req.body;
+	
+	if(!email || !password)
+	{
+		return res.status(400).json('invalid credentials');
+	}
 	
 	let realUser = {
         name:'',
@@ -734,6 +739,12 @@ app.post('/signin', (req, res) =>{
 //register
 app.post('/register', (req, res) => {
 	const { email, name, password } = req.body;
+	
+	if(!name || !email || !password)
+	{
+		console.log("invalid details");
+		return res.status(400).json('Invalid Form Details');
+	}
 	
 	alert_email_phone.push({email: email, phone: '', email_alert: 0, phone_alert: 0});
 	console.log(alert_email_phone);

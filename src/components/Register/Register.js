@@ -37,11 +37,16 @@ class Register extends React.Component {
 		})
 		.then(res => res.json())
 		.then(user => {
-			this.props.loadUser(user);
+			console.log(user);
+			if(user!=='Invalid Form Details')
+			{
+				this.props.loadUser(user);
+				this.props.onRouteChange('timeTable');
+			}
 		})
 		.catch((err) => {console.log(err)})
 		
-		this.props.onRouteChange('timeTable');
+		event.preventDefault();
 	}
 	
 	render() {
