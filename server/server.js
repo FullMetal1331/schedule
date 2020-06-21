@@ -9,7 +9,6 @@ const cron = require('node-cron');
 var Imap = require("imap");
 var MailParser = require("mailparser").MailParser;
 var Promise = require("bluebird");
-//Promise.longStackTraces();
 const db = require('knex')({
   client: 'pg',
   version: '7.2',
@@ -204,69 +203,7 @@ function update_from_replies() {
 	                }
 	                
 	             })
-	            // .then(()=>{
-	            //     for(let i=0;i<arr.length;i++)
-	            //     {
-	            //         if(message.charAt(i)=='Y' || message.charAt(i)=='y')
-	            //         {
-	            //               // db('subject')
-	            //               // .returning('*')
-	            //               // .where({ email:email,name:arr[i] })
-	            //               // .increment({ attended: 1,total: 1})
-	            //               // .then(data => console.log('Done 1', data))
-	            //               // .catch(()=>console.log('Not Done 1'))
-	                          
-	            //               db('subject')
-	            //               .where({ email:email3, name:arr[i] })
-	            //               .select('*')
-	            //               .then(data2 => {
-	            //               	let e = data2[0].email,
-	            //               		n = data2[0].name,
-	            //               		a = data2[0].attended, 
-	            //               		t = data2[0].total;
-	                          		
-	            //               		console.log('enat', e, n, a, t);
-	                          		
-	            //               		db('subject')
-	            //               		.returning('*')
-	            //               		.where({ email:e, name:n })
-	            //               		.update({attended: a+1, total: t+1})
-	            //               		.then(result => console.log(`updation of ${result}`))
-	            //               		.catch(() => console.log(`updation of ${n} failed`))
-	            //               })
-	            //               .catch(() => console.log('Not Done'))
-	            //         }
-	            //        else if(message.charAt(i)=='N' || message.charAt(i)=='n')
-	            //         {
-	            //               // db('subject')
-	            //               // .returning('*')
-	            //               // .where({ email:email,name:arr[i] })
-	            //               // .increment({ total: 1})
-	            //               // .then(data => console.log('Done 2', data))
-	            //               // .catch(()=>console.log('Not Done 2'))
-	                          
-	            //               db('subject')
-	            //               .where({ email:email3, name:arr[i] })
-	            //               .select('*')
-	            //               .then(data2 => {
-	            //               	let e = data2[0].email,
-	            //               		n = data2[0].name,
-	            //               		a = data2[0].attended, 
-	            //               		t = data2[0].total;
-	                          		
-	            //               		console.log('enat', e, n, a, t);
-	                          		
-	            //               		db('subject')
-	            //               		.returning('*')
-	            //               		.where({ email:e, name:n })
-	            //               		.update({total: t+1})
-	            //               		.then(result => console.log(`updation of ${result}`))
-	            //               		.catch(() => console.log(`updation of ${n} failed`))
-	            //               })
-	            //               .catch(() => console.log('Not Done'))
-	            //         }
-	            //     }
-	            // })
+	            
 	        }
 	     });
 
@@ -287,7 +224,6 @@ db
 .select('*')
 .from('users')
 .then(data => {
-	//console.log('loop');
 	
 	for(let i=0;i<data.length;i++)
 	{
@@ -333,9 +269,7 @@ cron.schedule('30 * * * * *' ,() =>{
 			else if(hourOfDay == 8)
 				data=user[i].from5to6;
 			else
-				data = 'maths';
-			
-			//console.log('data', data);
+				data = 'Free!';
 			
 			let email_alert=0, phone_alert=0, phone='';
 			
@@ -348,8 +282,6 @@ cron.schedule('30 * * * * *' ,() =>{
 					phone = alert_email_phone[x].phone;
 				}
 			}
-			
-			
 			
 			//console.log(`${data} \n  you have an attendance of: ${att}/${tot} \n i.e. ${per}%`);
 			
@@ -862,121 +794,6 @@ app.post('/register', (req, res) => {
 		.catch(trx.rollback)
 	})
 	.catch((err) => res.status(400).json('user-email already exists'));
-	
-	// db.transaction(trx => {
-	// 	db
-	// 	.insert({
-	// 		hash: hash,
-	// 		email: email
-	// 	})
-	// 	.returning('*')
-	// 	.into('login')
-	// 	.transacting(trx)
-	// 	.then(data => {
-	// 		console.log('after login', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email,
-	// 				name: name
-	// 			})
-	// 			.returning('*')
-	// 			.into('users')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after users', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('monday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after monday', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('tuesday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after tuesday', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('wednesday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after wednesday', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('thursday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after thursday', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('friday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after friday', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('saturday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(data => {
-	// 		console.log('after saturday', data);
-	// 		return(
-	// 			db
-	// 			.insert({
-	// 				email: email
-	// 			})
-	// 			.returning('*')
-	// 			.into('sunday')
-	// 			.transacting(trx)
-	// 		)
-	// 	})
-	// 	.then(trx.commit)
-	// 	.catch(trx.rollback)
-	// })
-	// .then(data => {
-	// 	console.log('outside trx func', data);
-	// 	res.send(realUser);
-	// })
-	// .catch((err) => res.status(400).json('user-email already exists'));
 });
 
 
