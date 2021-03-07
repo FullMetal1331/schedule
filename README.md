@@ -57,7 +57,7 @@ Every morning 8AM the user receives an email or a sms or both ( depending on the
 Everyday on 7PM users receive a mail regarding attendance updation. All the scheduled events of the day are listed down and the user has to reply with a string of 'Y'( attended ), 'N'( didn't attend ) or 'C'( cancelled ). According to the user's response the attendance is updated.
 
 <p align='center'>
-  <img src="https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/attendance_updation_email.PNG" height=400 title="Profile" />
+  <img src="https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/attendance_updation_email.PNG" height=400 title="Attendance Updation Email" />
 </p>
 
 ## Video Demo
@@ -72,5 +72,5 @@ In the Video below all the basic functions of the **Schedule Web App** are displ
 Along with the frontend I have also displayed the database state using SQL commands.( P.S. the bottom right corner has been blurred out as this was actually for my college project presentation :sweat_smile: )
 
 <p align='center'>
-  <img src="https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/schedule_tour.gif" height=400 title="Profile" />
+  <img src="https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/schedule_tour.gif" height=400 title="Schedule Video Tour" />
 </p>
