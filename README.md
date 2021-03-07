@@ -5,8 +5,8 @@ The **Schedule Web App** is mainly targeted towards school/college students and 
 New users can register through the registration page while existing user can sign in through the sign in page. Passwords of the users are stored in an encrypted manner using bcrypt and authenticated using the same.
 
 <p>
-  <img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/signin.PNG' height=200 title='Signin Portal' />
-  <img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/register.PNG' height=200 title='Registration Portal' />
+  <img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/signin.PNG' width=400 title='Signin Portal' />
+  <img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/register.PNG' width=400 title='Registration Portal' />
 </p>
 
 
