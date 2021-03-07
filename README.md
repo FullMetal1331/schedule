@@ -10,7 +10,7 @@ New users can register through the registration page while existing user can sig
     <td>Registration Portal</td>
   </tr>
   <tr>
-    <td><img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/signin.PNG' height=250 /></td>
-    <td><img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/register.PNG' height=250 /></td>
+    <td><img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/signin.PNG' height=275 /></td>
+    <td><img src='https://raw.githubusercontent.com/FullMetal1331/schedule/master/src/components/Demo_Pics/register.PNG' height=275 /></td>
   </tr>
 </table>
