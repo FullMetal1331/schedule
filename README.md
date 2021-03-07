@@ -1,5 +1,5 @@
 # Schedule Web App
-The **Schedule Web App** is mainly targeted towards school/college students and provides a plethora of tools to magnify their time utilization. With the help of scheduled timetable reminders, project manager and attendance tracker/updater the users are always aware of their upcoming and pending tasks.
+The **Schedule Web App** is mainly targeted towards school/college students and provides a plethora of tools to magnify their time utilization. With the help of scheduled timetable reminders, project manager and attendance tracker/updater the users are always aware of their upcoming and pending tasks. I have also made a modified Flutter app version of the same ( [Schedule Mobile App](https://github.com/FullMetal1331/ScheduleMobileApp) )
 
 ## Sign In / Register
 New users can register through the registration page while existing user can sign in through the sign in page. Passwords of the users are stored in an encrypted manner using bcrypt and authenticated using the same.
