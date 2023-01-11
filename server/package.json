@@ -20,7 +20,7 @@
     "cors": "^2.8.5",
     "express": "^4.17.1",
     "imap": "^0.8.19",
-    "knex": "^0.20.8",
+    "knex": "^2.4.0",
     "mailparser": "^2.7.7",
     "node-cron": "^2.0.3",
     "nodemailer": "^6.4.8",
